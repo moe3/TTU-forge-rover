@@ -25,14 +25,11 @@ module clk_div_testb(
     );
      // Make a register for the clock you're going to generate and the reset.
      reg clk = 0,rst = 0;
-     wire [4:0] led;
-
-     // Generally, you make registers for inputs because you usually want to
-     // make procedural changes to them to see how the output is affected. In
-     // this case, we could get away with using wires if we also made appropriate
-     // changes to the assignments so they were continuous assignments instead
-     // of procedural assignments.
-     reg [31:0] scale = 1000;
+    // wire [4:0] led;
+     wire [3:0] ja;
+  //   reg sw;
+    // reg [31:0] scale = 1000;
+     
      // Make a wire for your output.
      wire out;
 
@@ -40,9 +37,11 @@ module clk_div_testb(
      clk_div test(
           .clk(clk),
           .reset(rst),
-          .scale(scale),
+    //      .scale(scale),
           .clk_out(out),
-          .led(led)
+       //   .led(led)
+         //   . sw(sw),
+          .ja(ja)
           );
 
      // Initialize the clock and reset to 0.
